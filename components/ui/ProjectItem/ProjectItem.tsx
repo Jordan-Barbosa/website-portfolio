@@ -9,7 +9,7 @@ interface Props {
 export default function ProjectItem({ project }: Props) {
   return (
     <a
-      href={`/projects/${project._id}`}
+      href={`/projects/${project.id}`}
       className="project-item d-flex justify-content-center align-items-center"
     >
       <div className="project-item-overlay d-flex justify-content-center align-items-center">
@@ -20,7 +20,7 @@ export default function ProjectItem({ project }: Props) {
       {/* { In the future create smaller images 350x250} */}
       <div className="project-image d-flex justify-content-center align-items-center">
         <Image
-          src={`https://jordanbarbosa.com/static/images/projects/${project?._id}-min.png`}
+          src={`https://jordanbarbosa.com/static/images/projects/${project?.id}-min.png`}
           alt={`Preview of project ${project.name}`}
           width="450"
           height="200"

@@ -9,7 +9,9 @@ export type GetProjectsError = AxiosError<{ errors: { message: string }[] }>;
 export async function getProjects(client?: AxiosInstance) {
   const url = `/api/projects`;
 
-  const { data }: AxiosResponse<Project[]> = await (client ? client.get(url) : Axios.get(url));
+  const { data }: AxiosResponse<{ count: number; data: Project[] }> = await (client
+    ? client.get(url)
+    : Axios.get(url));
 
-  return data;
+  return data.data;
 }
