@@ -1,10 +1,10 @@
 FROM node:15-alpine
 
-WORKDIR /src
-COPY package.json package-lock.json /src/
+WORKDIR /app
+COPY package.json package-lock.json /app/
 
 RUN npm ci
 
-COPY . /src
+COPY . /app
 
 CMD ["npm", "run", "dev"]

@@ -1,0 +1,20 @@
+kind: Module
+description: Client Frontend
+name: client
+type: container
+
+hotReload:
+  sync:
+    - target: /app
+
+services:
+  - name: client
+    args: [npm, run, dev]
+    ports:
+      - name: http
+        servicePort: 3000
+        containerPort: 3000
+    ingresses:
+      - hostname: localhost
+        path: /
+        port: http
