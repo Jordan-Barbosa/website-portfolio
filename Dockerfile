@@ -1,10 +1,13 @@
-FROM node:15-alpine
+FROM node:16-alpine
 
 WORKDIR /app
-COPY package.json package-lock.json /app/
+COPY package.json .
 
-RUN npm ci
+# Install PNPM
+RUN npm i -g pnpm
 
-COPY . /app
+RUN pnpm i
+
+COPY . .
 
 CMD ["npm", "run", "dev"]
