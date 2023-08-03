@@ -11,7 +11,7 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@sveltejs/kit": "^1.0.0-next.1",
+		"@sveltejs/kit": "^1.15.2",
 		"@types/cssnano": "^4.0.1",
 		"@types/eslint": "^7.28.0",
 		"@types/prettier": "~2.3.2",
